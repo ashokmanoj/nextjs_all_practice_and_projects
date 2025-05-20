@@ -13,3 +13,12 @@ export async function POST(request: Request) {
     movies.push(newmovie);
     return new Response(JSON.stringify(newmovie));
 }
+
+//Patch method
+
+export async function PATCH(request: Request) {
+    let movie = await request.json();
+    const newmovie = {...movie}
+    movies.push(newmovie);
+    return new Response(JSON.stringify(newmovie));
+}
