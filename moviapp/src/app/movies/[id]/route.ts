@@ -36,3 +36,14 @@ export async function PATCH(request: Request, {params} :{params: {id: string}}) 
 
    
 }
+
+
+//delete method
+
+export async function DELETE(request: Request, {params} :{params: {id: string}}) {
+    const {id} = await params;
+    const movie = movies.find((movie) => movie.id == +id);
+    if (!movie) return new Response('movie not found', {status: 404});
+    movies.splice(movies.indexOf(movie), 1);
+    return new Response('movie deleted', {status: 200});
+}
