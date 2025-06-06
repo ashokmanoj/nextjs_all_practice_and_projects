@@ -18,24 +18,24 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,library,player,nowplaying
+  children,player,nowplaying,main,sidebar
 }: Readonly<{
   children: React.ReactNode;
-  library: React.ReactNode;
   player: React.ReactNode;
   nowplaying: React.ReactNode
+  main: React.ReactNode;
+  sidebar: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        <div className="flex">
-          {library}
-          {player}
-          {nowplaying}
-        </div>
+    <html>
+      <body className="grid grid-cols-[250px_1fr_300px] grid-rows-[1fr_auto] h-screen">
+        {/* Top row: sidebar, main, nowplaying */}
+        <div className="row-span-1 col-span-1 border-r">{sidebar}</div>
+        <div className="row-span-1 col-span-1 overflow-y-auto">{main}</div>
+        <div className="row-span-1 col-span-1 border-l">{nowplaying}</div>
+
+        {/* Bottom row: player across all columns */}
+        <div className="col-span-3 border-t">{player}</div>
       </body>
     </html>
   );
