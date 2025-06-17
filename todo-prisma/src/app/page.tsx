@@ -1,4 +1,4 @@
-import * as actions from "@/actions";
+import * as actions from "@/actions/index";
 import SaveButton from "@/components/SaveButton";
 import { db } from "@/utils/db";
 

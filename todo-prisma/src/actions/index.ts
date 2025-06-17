@@ -2,7 +2,7 @@
 import { db } from "@/utils/db";
 
 export async function createTodo(formData: FormData) {
-  "use server";
+  // "use server";
 
   const input = formData.get("input") as string;
 
@@ -12,7 +12,7 @@ export async function createTodo(formData: FormData) {
 }
 
 export async function editTodo(formData: FormData) {
-  "use server";
+  // "use server";
 
   const input = formData.get("input") as string;
   const inputId = formData.get("inputId") as string;
@@ -24,7 +24,7 @@ export async function editTodo(formData: FormData) {
 }
 
 export async function deleteTodo(formData: FormData) {
-  "use server";
+  // "use server";
 
   const inputId = formData.get("inputId") as string;
 
